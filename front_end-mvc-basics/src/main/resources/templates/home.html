@@ -8,7 +8,7 @@
     <title>Home</title>
 </head>
 <body>
-<form th:object="${newMessage}" th:action="@{'/home'}" action="#" method="POST">
+<form th:object="${messageForm}" th:action="@{'/home'}" action="#" method="POST">
     <label>Submit a message: </label>
     <input th:field="*{text}" type="text">
     <input type="submit">

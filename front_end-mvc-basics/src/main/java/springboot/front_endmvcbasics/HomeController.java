@@ -17,15 +17,19 @@ public class HomeController {
         this.messageListService = messageListService;
     }
 
+    //the name messageForm has to math the POJO's name in html
+    //if we want to use different name other than messageForm
+    //we have to use @ModelAttribute("...") MessageForm ..., to explicitly tell spring, the model in argument is matching
+    //which POJO in html
     @GetMapping("/home")
-    public String getHomePage(@ModelAttribute("newMessage") MessageForm newMessage, Model model) {
+    public String getHomePage(MessageForm messageForm, Model model) {
         model.addAttribute("greetings", this.messageListService.getMessages());
         return "home";
     }
 
     @PostMapping("/home")
-    public String addMessage(@ModelAttribute("newMessage") MessageForm newForm, Model model) {
-        messageListService.addMessage(newForm.getText());
+    public String addMessage(MessageForm messageForm, Model model) {
+        messageListService.addMessage(messageForm.getText());
         model.addAttribute("greetings", messageListService.getMessages());
         return "home";
     }
