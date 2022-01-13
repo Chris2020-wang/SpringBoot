@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+/Users/chris/Documents/SpringBoot/Springboot/chat/.metadata/.plugins/org.eclipse.jdt.core
+2214016655.index
